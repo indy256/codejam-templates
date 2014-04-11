@@ -21,3 +21,7 @@ Case #1: 2.3200000000
 Case #2: 6.0000000000
 </pre>
 
+--
+Feel free to contibute.
+
+Todo: add multi-threaded templates.
