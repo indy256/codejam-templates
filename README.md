@@ -6,7 +6,7 @@ Templates for Google Code Jam contests in different programming languages.
 In order to make a good demonstration of language constructs the following simple problem is solved by the templates.
 
 #### Problem statement
-Answer **median** or **arithmetic mean** queries for given arrays of real numbers. For **median** queries arrays will have odd length. For earch query answer must have 10 correctly rounded fractional digits.
+Answer **median** and **arithmetic mean** queries for given arrays of real numbers. For **median** queries arrays will have odd length. For earch query answer must have 10 correctly rounded fractional digits.
 
 Example of input:
 <pre>
