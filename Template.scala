@@ -9,7 +9,7 @@ object Template {
   def main(args: Array[String]) {
     val name = "A-small"
     val path = ""
-    
+
     Locale.setDefault(Locale.US)
 
     val sc = new Scanner(new File(path + name + ".in"))
@@ -27,7 +27,7 @@ object Template {
       for (i <- 0 to n - 1) {
         a(i) = sc.nextDouble()
       }
-    	
+
       var res = 0.0
       if (cmd == "median") {
         Arrays.sort(a)
