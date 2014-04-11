@@ -1,4 +1,4 @@
 codejam-templates
 =================
 
-Templates for Google Code Jam contests on different programming languages
+Templates for Google Code Jam contest on different programming languages
