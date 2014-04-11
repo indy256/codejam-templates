@@ -22,6 +22,6 @@ Case #2: 6.0000000000
 </pre>
 
 --
-Feel free to contibute.
+Feel free to contibute additional languages.
 
 Todo: add multi-threaded templates.
