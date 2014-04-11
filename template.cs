@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-public class A {
+public class Template {
 
 	public static void Main() {
 		string name = "A-small";
