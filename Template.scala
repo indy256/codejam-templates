@@ -11,7 +11,7 @@ object Template {
 
     val sc = new Scanner(new File(path + name + ".in"))
     val pw = new PrintWriter(path + name + ".out")
-    
+
 //    val sc = new Scanner(System.in)
 //    val pw = new PrintWriter(System.out)
 
