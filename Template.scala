@@ -1,5 +1,5 @@
-import java.io._;
-import java.util._;
+import java.io._
+import java.util._
 
 object Template {
 
@@ -27,7 +27,7 @@ object Template {
         case "mean" => a.sum / n
       }
 
-      pw.println(s"Case #${testCase}" + ": %.10f".format(res))
+      pw.println(s"Case #${testCase}: " + "%.10f".format(res))
       pw.flush()
     }
 
