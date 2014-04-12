@@ -16,9 +16,9 @@ void main() {
         string cmd;
         int n;
         input.readf(" %s %d", &cmd, &n);
-     
+
         double[] a = new double[](n);
-        
+
         foreach(i; 0..n) {
             input.readf(" %f", &a[i]);
         }
