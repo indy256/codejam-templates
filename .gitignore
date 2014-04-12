@@ -1,4 +1,5 @@
 *.class
 *.exe
+*.obj
 a.out
 A-small.out
