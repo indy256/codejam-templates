@@ -10,7 +10,7 @@ func main() {
 	fmt.Scanln(&testCases)
 
 	for testCase := 1; testCase <= testCases; testCase++ {
-		var cmd string			
+		var cmd string
 		var n int
 		fmt.Scan(&cmd, &n)
 
