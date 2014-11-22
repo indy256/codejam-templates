@@ -15,7 +15,7 @@ for (var testCase = 1; testCase <= testCases; ++testCase) {
 
     switch (cmd) {
         case "median":
-            a.sort();
+            a.sort(function(a, b) { return a - b; });
             res = a[n >> 1];
             break;
         case "mean":
