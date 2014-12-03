@@ -1,22 +1,23 @@
 // node template.js < A-small.in > A-small.out
 
 function main() {
-    var testCases = readline();
+    var testCases = nextInt();
 
     for (var testCase = 1; testCase <= testCases; ++testCase) {
-        var line = readline().split(' ');
-        var cmd = line[0];
-        var n = parseInt(line[1]);
+        var cmd = next();
+        var n = nextInt();
         var a = [];
         for (var i = 0; i < n; i++) {
-            a[i] = parseFloat(line[i + 2]);
+            a[i] = parseFloat(next());
         }
 
         var res;
 
         switch (cmd) {
             case "median":
-                a.sort(function(a, b) { return a - b; });
+                a.sort(function (a, b) {
+                    return a - b;
+                });
                 res = a[n >> 1];
                 break;
             case "mean":
@@ -33,9 +34,21 @@ function main() {
 }
 
 // auxiliary code
-process.stdin.resume();
-process.stdin.setEncoding('utf8');
+var curTokens = [], curToken = 0;
 
+function next() {
+    while (curToken >= curTokens.length) {
+        curTokens = readline().split(/[\s]+/);
+        curToken = 0;
+    }
+    return curTokens[curToken++];
+}
+
+function nextInt() {
+    return parseInt(next());
+}
+
+// code for nodejs
 var inputBuffer = '', curLine = 0;
 
 function readline() {
@@ -46,11 +59,14 @@ function print(data) {
     process.stdout.write(data + '\n');
 }
 
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
 process.stdin.on('data', function (chunk) {
     inputBuffer += chunk;
 });
 
 process.stdin.on('end', function () {
-    inputBuffer = inputBuffer.split('\n');
+    inputBuffer = inputBuffer.split(/[\s]+/);
     main();
 });
