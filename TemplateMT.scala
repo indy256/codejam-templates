@@ -1,37 +1,35 @@
+import java.util._
 import scala.concurrent.duration._
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 import scala.language.postfixOps
 
 object Main {
-	java.util.Locale.setDefault(java.util.Locale.US)
 
-	val in = new java.util.Scanner(System.in)
-	def nextInt = in.next().toInt
-	def nextDouble = in.next().toDouble
+  def main(args: Array[String]): Unit = {
+    Locale.setDefault(Locale.US)
+    val sc = new Scanner(System.in)
 
-	def main(args: Array[String]): Unit = {
+    val testCases = sc.nextInt
 
-		val taskCount = nextInt
-		val tasks = for (test <- 1 to taskCount) yield {
+    val tasks = for (testCase <- 1 to testCases) yield {
+      val cmd = sc.next
+      val n = sc.nextInt
+      val a = Seq.fill(n)(sc.nextDouble)
 
-			val op = in.next
-			val n = nextInt
-			val vals = Seq.fill(n)(nextDouble)
+      def solve() = cmd match {
+        case "median" => a.sorted.apply(n / 2)
+        case "mean" => a.sum / n
+      }
 
-			def solve() = op match {
-				case "median" => vals.sorted.apply(n / 2)
-				case "mean" => vals.sum / n
-			}
+      Future {
+        s"Case #$testCase: " + "%.10f".format(solve())
+      }
+    }
 
-			future {
-				s"Case #${test}: " + "%.10f".format(solve())
-			}
-		}
+    val all = Future.sequence(tasks)
+    val result = Await.result(all, 8 minutes)
 
-		val all = Future.sequence(tasks)
-		val result = Await.result(all, 8 minutes)
-		
-		result foreach println
-	}
+    result foreach println
+  }
 }
