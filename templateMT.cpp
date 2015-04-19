@@ -15,8 +15,21 @@
 #include <cmath>
 #include <climits>
 #include <numeric>
+#include <future>
 
 using namespace std;
+
+double solve(string cmd, vector<double> a) {
+	int n = a.size();
+	double res;
+	if (cmd == "median") {
+		sort(a.begin(), a.end());
+		res = a[n / 2];
+	} else if (cmd == "mean") {
+		res = accumulate(a.begin(), a.end(), 0.0) / n;
+	}
+	return res;
+}
 
 int main() {
 	string name = "A-small";
@@ -27,6 +40,8 @@ int main() {
 
 	int test_cases;
 	cin >> test_cases;
+
+	future<double> futures[test_cases];
 
 	for (int test_case = 1; test_case <= test_cases; test_case++) {
 		string cmd;
@@ -39,14 +54,11 @@ int main() {
 			cin >> a[i];
 		}
 
-		double res;
-		if (cmd == "median") {
-			sort(a.begin(), a.end());
-			res = a[n / 2];
-		} else if (cmd == "mean") {
-			res = accumulate(a.begin(), a.end(), 0.0) / n;
-		}
+		futures[test_case - 1] = async(launch::async, solve, cmd, a);
+	}
 
+	for (int test_case = 1; test_case <= test_cases; test_case++) {
+		double res = futures[test_case - 1].get();
 		cout << "Case #" << test_case << ": " << fixed << setprecision(10) << res << endl;
 		cout.flush();
 	}

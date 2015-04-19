@@ -30,6 +30,6 @@ object Main {
     val all = Future.sequence(tasks)
     val result = Await.result(all, 8 minutes)
 
-    result foreach println
+    result foreach println()
   }
 }
