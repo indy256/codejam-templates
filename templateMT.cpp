@@ -32,6 +32,7 @@ double solve(string cmd, vector<double> a) {
 }
 
 int main() {
+	//auto start = chrono::system_clock::now();
 	string name = "A-small";
 	string path = "";
 
@@ -65,5 +66,6 @@ int main() {
 
 	fclose(stdout);
 	fclose(stdin);
+	//cerr << chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now() - start).count() << endl;
 	return 0;
 }
