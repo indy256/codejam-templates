@@ -9,5 +9,7 @@ output :: Int -> Double -> String
 output testCase res = "Case #" ++ show testCase ++ ": " ++ printf "%.10f" res
 
 solve :: [String] -> Double
-solve ("mean": x) = (foldl (+) 0 (map read $ tail x)) / (fromIntegral $ ((length x) - 1))
-solve ("median": x) = sort (map read $ tail x) !! (quot ((length x) - 1) 2)
+solve (cmd: x)
+  | cmd == "mean" = (foldl (+) 0 a) / (fromIntegral $ ((length x) - 1))
+  | cmd == "median" = sort a !! (quot ((length x) - 1) 2)
+  where a = map read $ tail x
