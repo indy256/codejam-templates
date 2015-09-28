@@ -1,12 +1,11 @@
 import java.util._
-import scala.concurrent.duration._
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent._
-import ExecutionContext.Implicits.global
-import scala.language.postfixOps
+import scala.concurrent.duration._
 
-object Main {
+object TemplateMT {
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) {
     Locale.setDefault(Locale.US)
     val sc = new Scanner(System.in)
 
@@ -28,8 +27,8 @@ object Main {
     }
 
     val all = Future.sequence(tasks)
-    val result = Await.result(all, 8 minutes)
+    val result = Await.result(all, 8.minutes)
 
-    result foreach println()
+    result foreach println
   }
 }

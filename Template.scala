@@ -12,14 +12,14 @@ object Template {
     val sc = new Scanner(new File(path + name + ".in"))
     val pw = new PrintWriter(path + name + ".out")
 
-//    val sc = new Scanner(System.in)
-//    val pw = new PrintWriter(System.out)
+//  val sc = new Scanner(System.in)
+//  val pw = new PrintWriter(System.out)
 
     val testCases = sc.nextInt
 
     for (testCase <- 1 to testCases) {
       val cmd = sc.next
-      val n : Int = sc.nextInt
+      val n = sc.nextInt
       val a = Seq.fill(n)(sc.nextDouble)
 
       val res = cmd match {
