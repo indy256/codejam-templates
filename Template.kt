@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 
-@Throws(Exception::class)
 fun main(args: Array<String>) {
     val name = "A-small"
     val path = ""
@@ -17,8 +16,6 @@ fun main(args: Array<String>) {
         val n = sc.nextInt()
         val a = DoubleArray(n) { sc.nextDouble() }
 
-        val result : Double
-
         val result = when (cmd) {
             "median" -> a.sortedArray()[n / 2]
             "mean" -> a.sum() / n
@@ -30,5 +27,4 @@ fun main(args: Array<String>) {
 
     pw.close()
     sc.close()
-
 }
