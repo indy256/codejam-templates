@@ -4,8 +4,8 @@ import java.util.*;
 
 @Throws(Exception::class)
 fun main(args: Array<String>) {
-    var name = "A-small"
-    var path = ""
+    val name = "A-small"
+    val path = ""
 
     val sc = Scanner(File("$path$name.in"))
     val pw = PrintWriter("$path$name.out")
