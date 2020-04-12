@@ -6,6 +6,8 @@ fun main(args: Array<String>) {
     val name = "A-small"
     val path = ""
 
+    Locale.setDefault(Locale.US)
+
     val sc = Scanner(File("$path$name.in"))
     val pw = PrintWriter("$path$name.out")
 
